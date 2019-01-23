@@ -1,4 +1,4 @@
-{
+{ const helper = new Helper;
   album.songs.forEach( (song, index) => {
     song.element = $(`
       <tr>
@@ -14,8 +14,9 @@
     `);
 
     song.element.on('click', event => {
-      player.playPause(song);
+      helper.playPauseAndUpdate(song);
       $('button#play-pause').attr('playState', player.playState);
+      console.log(song);
     });
 
     $('#song-list').append(song.element);
