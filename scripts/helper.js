@@ -5,3 +5,5 @@ class Helper {
     console.log(player.getDuration());
   }
 }
+
+const helper = new Helper;
