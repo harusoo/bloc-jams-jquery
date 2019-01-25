@@ -6,4 +6,4 @@ class Helper {
   }
 }
 
-const helper = new Helper;
+const helper = new Helper();
