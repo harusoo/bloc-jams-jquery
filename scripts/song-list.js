@@ -1,4 +1,4 @@
-{ const helper = new Helper;
+{
   album.songs.forEach( (song, index) => {
     song.element = $(`
       <tr>

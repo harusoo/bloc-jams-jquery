@@ -1,5 +1,4 @@
-$(document).ready(function() {
-  const helper = new Helper;
+{
   $('button#play-pause').on('click', function() {
     helper.playPauseAndUpdate();
     $(this).attr('playState', player.playState);
@@ -33,8 +32,8 @@ $(document).ready(function() {
 
   setInterval( () => {
     if (player.playState !== 'playing') { return; }
-    const currentTime = Math.floor(player.getTime());
-    const duration = Math.floor(player.getDuration());
+    const currentTime = player.getTime();
+    const duration = player.getDuration();
     const percent = (currentTime / duration) * 100;
     $('#time-control .current-time').text( currentTime );
     $('#time-control input').val(percent);
@@ -43,4 +42,5 @@ $(document).ready(function() {
   $('#volume-control input').on('input', function (event) {
     player.setVolume(event.target.value);
   })
-});
+
+}

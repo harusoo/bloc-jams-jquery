@@ -49,7 +49,14 @@ class Player {
   }
 
   prettyTime (timeInSeconds) {
-    player.prettyTime(song);
+    const sec_num = parseInt(this, 10); // don't forget the second param
+    const hours = Math.floor(sec_num / 3600);
+    const minutes = Math.floor((sec_num - (hours * 3600)) / 60);
+    const seconds = sec_num - (hours * 3600) - (minutes * 60);
+
+    if (minutes < 10) {minutes = "0"+minutes;}
+    if (seconds < 10) {seconds = "0"+seconds;}
+    return minutes+':'+seconds;
   }
 }
 
